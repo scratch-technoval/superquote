@@ -1,0 +1,2 @@
+# superquote
+Safe string encoder
