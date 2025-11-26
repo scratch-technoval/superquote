@@ -1,12 +1,12 @@
-# SuperQuote lib
-
 import random
 import re
 
 ALPHA_NUMS = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-QUOTE_CHARS = "\"'-+*"
+QUOTE_CHARS = "\'-+*"
 
-def generate_superquote(length: int = 7) -> str:
+def generate_superquote(length: int = None) -> str:
+    if length is None:
+        length = random.randint(4, 10)
     return ''.join(random.choice(QUOTE_CHARS) for _ in range(length))
 
 def toSuperQuote(quote: str, superquote: str = None) -> str:
@@ -22,10 +22,10 @@ def toSuperQuote(quote: str, superquote: str = None) -> str:
             encoded_parts.append(f'\\{ord(c):04d}\\')
     encoded_content = ''.join(encoded_parts)
 
-    return f'({length})"{superquote}"{encoded_content}"{superquote}"'
+    return f"({length})'{superquote}'{encoded_content}'{superquote}'"
 
 def fromSuperQuote(encoded: str) -> str:
-    m = re.match(r'^\((\d+)\)"', encoded)
+    m = re.match(r"^\((\d+)\)'", encoded)
     if not m:
         raise ValueError("Invalid superquote format")
 
@@ -37,11 +37,11 @@ def fromSuperQuote(encoded: str) -> str:
 
     superquote = encoded[start:start+length]
     after = start + length
-    if encoded[after] != '"':
+    if encoded[after] != "'":
         raise ValueError("Invalid superquote format")
 
     pattern = re.compile(
-        rf'^\({length}\)"{re.escape(superquote)}"(.*)"{re.escape(superquote)}"$',
+        rf"^\({length}\)'{re.escape(superquote)}'(.*)'{re.escape(superquote)}'$",
         re.DOTALL
     )
 
