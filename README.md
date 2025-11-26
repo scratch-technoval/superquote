@@ -1,6 +1,6 @@
 # 📘 SuperQuote
 
-SuperQuote is a small Python utility that can safely encode and decode any string — including special characters, punctuation, Unicode, and even multiline text — using a custom randomly-generated delimiter (“superquote”).
+SuperQuote is a small Python utility that can safely encode and decode any string — including special characters, punctuation, Unicode, and even multiline text — using a custom randomly generated delimiter (“superquote”).
 
 ---
 
@@ -34,31 +34,33 @@ decoded = superquote.fromSuperQuote(encoded)
 print(decoded)
 
 # I use backslashes to avoid breaking the chain.
-print(superquote.fromSuperQuote("(7)\"''-*+\"*\"Hello\\0044\\ you can use this lib \\0033\\\"''-*+\"*\""))
+print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
 ```
 
-### Output
+### (Example of) Output
 
 ```
-(7)""+""+*""Hello\0044\ world \0033\""+""+*""
+(10)'+-++*+''--'Hello\0044\ world \0033\'+-++*+''--'
 Hello, world !
-(7)"*"'-***"This\0010\is\0010\my\0010\python\0010\library \0033\"*"'-***"
+(4)'-'-+'This\0010\is\0010\my\0010\python\0010\library \0033\'-'-+'
 This
 is
 my
 python
 library !
-Hello, you can use this lib !
+You can use this lib !
 ```
 
 ### How to use it?
 
 1. Install the library
+
 2. Import it:
 
    ```python
    import superquote
    ```
+
 3. Use it in different ways:
 
    1. **Variable-based usage**
@@ -91,7 +93,7 @@ Hello, you can use this lib !
       import superquote
 
       # I use backslashes to avoid breaking the chain.
-      print(superquote.fromSuperQuote("(7)\"''-*+\"*\"Hello\\0044\\ you can use this lib \\0033\\\"''-*+\"*\""))
+      print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
       ```
 
    3. **List of functions:**
@@ -132,21 +134,21 @@ decoded = superquote.fromSuperQuote(encoded)
 print(decoded)
 
 # I use backslashes to avoid breaking the chain.
-print(superquote.fromSuperQuote("(7)\"''-*+\"*\"Hello\\0044\\ you can use this lib \\0033\\\"''-*+\"*\""))
+print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
 ```
 
-### Résultat
+### (Exemple de) Résultat
 
 ```
-(7)""+""+*""Hello\0044\ world \0033\""+""+*""
+(10)'+-++*+''--'Hello\0044\ world \0033\'+-++*+''--'
 Hello, world !
-(7)"*"'-***"This\0010\is\0010\my\0010\python\0010\library \0033\"*"'-***"
+(4)'-'-+'This\0010\is\0010\my\0010\python\0010\library \0033\'-'-+'
 This
 is
 my
 python
 library !
-Hello, you can use this lib !
+You can use this lib !
 ```
 
 ### Comment l'utiliser ?
@@ -185,7 +187,7 @@ Hello, you can use this lib !
       import superquote
 
       # I use backslashes to avoid breaking the chain.
-      print(superquote.fromSuperQuote("(7)\"''-*+\"*\"Hello\\0044\\ you can use this lib \\0033\\\"''-*+\"*\""))
+      print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
       ```
 
    3. **Liste des fonctions :**
