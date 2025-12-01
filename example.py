@@ -10,5 +10,4 @@ print(encoded)
 decoded = superquote.fromSuperQuote(encoded)
 print(decoded)
 
-# I use backslashes to avoid breaking the chain.
-print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
+print(superquote.fromSuperQuote("(5)'**-'-'Hello .33. You can use this lib .33.'**-'-'"))
