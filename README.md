@@ -33,22 +33,21 @@ print(encoded)
 decoded = superquote.fromSuperQuote(encoded)
 print(decoded)
 
-# I use backslashes to avoid breaking the chain.
-print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
+print(superquote.fromSuperQuote("(5)'**-'-'Hello .33. You can use this lib .33.'**-'-'"))
 ```
 
 ### (Example of) Output
 
 ```
-(10)'+-++*+''--'Hello\0044\ world \0033\'+-++*+''--'
+(6)'*-++*-'Hello.44. world .33.'*-++*-'
 Hello, world !
-(4)'-'-+'This\0010\is\0010\my\0010\python\0010\library \0033\'-'-+'
+(5)''++-+'This.10.is.10.my.10.python.10.library .33.''++-+'
 This
 is
 my
 python
 library !
-You can use this lib !
+Hello ! You can use this lib !
 ```
 
 ### How to use it?
@@ -93,7 +92,7 @@ You can use this lib !
       import superquote
 
       # I use backslashes to avoid breaking the chain.
-      print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
+      print(superquote.fromSuperQuote("(5)'**-'-'Hello .33. You can use this lib .33.'**-'-'"))
       ```
 
    3. **List of functions:**
@@ -133,22 +132,21 @@ print(encoded)
 decoded = superquote.fromSuperQuote(encoded)
 print(decoded)
 
-# I use backslashes to avoid breaking the chain.
-print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
+print(superquote.fromSuperQuote("(5)'**-'-'Hello .33. You can use this lib .33.'**-'-'"))
 ```
 
 ### (Exemple de) Résultat
 
 ```
-(10)'+-++*+''--'Hello\0044\ world \0033\'+-++*+''--'
+(6)'*-++*-'Hello.44. world .33.'*-++*-'
 Hello, world !
-(4)'-'-+'This\0010\is\0010\my\0010\python\0010\library \0033\'-'-+'
+(5)''++-+'This.10.is.10.my.10.python.10.library .33.''++-+'
 This
 is
 my
 python
 library !
-You can use this lib !
+Hello ! You can use this lib !
 ```
 
 ### Comment l'utiliser ?
@@ -187,7 +185,7 @@ You can use this lib !
       import superquote
 
       # I use backslashes to avoid breaking the chain.
-      print(superquote.fromSuperQuote("(4)''**+'You can use this lib \\0033\\''**+'"))
+      print(superquote.fromSuperQuote("(5)'**-'-'Hello .33. You can use this lib .33.'**-'-'"))
       ```
 
    3. **Liste des fonctions :**
