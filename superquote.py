@@ -25,27 +25,24 @@ def toSuperQuote(quote: str, superquote: str = None) -> str:
 def fromSuperQuote(encoded: str) -> str:
     m = re.match(r"^\((\d+)\)'", encoded)
     if not m:
-        raise ValueError("Format de superquote invalide")
+        raise ValueError("Invalid superquote format")
     length = int(m.group(1))
     start = m.end()
     if len(encoded) < start + length + 1:
-        raise ValueError("Format de superquote invalide")
+        raise ValueError("Invalid superquote format")
     superquote = encoded[start:start+length]
     after = start + length
     if encoded[after] != "'":
-        raise ValueError("Format de superquote invalide")
-
+        raise ValueError("Invalid superquote format")
     pattern = re.compile(
         rf"^\({length}\)'{re.escape(superquote)}'(.*)'{re.escape(superquote)}'$",
         re.DOTALL
     )
     m2 = pattern.match(encoded)
     if not m2:
-        raise ValueError("Bloc encodé invalide")
+        raise ValueError("Invalid encoded block")
     content = m2.group(1)
-
     def replace_match(match):
         code = match.group(1)
         return chr(int(code))
-
     return re.sub(r'\.([0-9]+)\.', replace_match, content)
